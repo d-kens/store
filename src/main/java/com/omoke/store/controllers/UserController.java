@@ -13,8 +13,8 @@ import java.util.Set;
 
 
 @RestController
-@AllArgsConstructor
 @RequestMapping("/users")
+@AllArgsConstructor
 public class UserController {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
@@ -27,7 +27,7 @@ public class UserController {
 
         return userRepository.findAll(Sort.by(sort))
                 .stream()
-                .map(userMapper::toDto)
+                .map(userMapper::toUserDto)
                 .toList();
     }
 
@@ -39,6 +39,6 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(userMapper.toDto(user));
+        return ResponseEntity.ok(userMapper.toUserDto(user));
     }
 }
