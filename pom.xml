@@ -76,6 +76,11 @@
 		</dependency>
 
 		<dependency>
+			<artifactId>flyway-mysql</artifactId>
+			<groupId>org.flywaydb</groupId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
@@ -112,6 +117,19 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/store_api?createDatabaseIfNotExist=true</url>
+					<user>root</user>
+					<password>D!ck3n5@123</password>
+					<cleanDisabled>false</cleanDisabled>
+				</configuration>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
