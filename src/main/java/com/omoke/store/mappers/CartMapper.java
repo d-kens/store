@@ -1,6 +1,5 @@
 package com.omoke.store.mappers;
 
-
 import com.omoke.store.dtos.CartDto;
 import com.omoke.store.dtos.CartItemDto;
 import com.omoke.store.entities.Cart;
@@ -10,8 +9,9 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface CartMapper {
-    CartDto tocartDto(Cart cart);
+    @Mapping(target = "totalPrice", expression = "java(cart.getTotalPrice())")
+    CartDto toDto(Cart cart);
 
     @Mapping(target = "totalPrice", expression = "java(cartItem.getTotalPrice())")
-    CartItemDto toCartItemDto(CartItem cartItem);
+    CartItemDto toDto(CartItem cartItem);
 }
