@@ -5,6 +5,7 @@ import com.omoke.store.entities.Product;
 import com.omoke.store.mappers.ProductMapper;
 import com.omoke.store.repositories.CategoryRepository;
 import com.omoke.store.repositories.ProductRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 @AllArgsConstructor
+@Tag(name = "Products")
 public class ProductController {
 
     private final ProductMapper productMapper;
