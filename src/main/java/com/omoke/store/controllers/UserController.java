@@ -4,6 +4,7 @@ import com.omoke.store.dtos.ChangePasswordRequest;
 import com.omoke.store.dtos.RegisterUserRequest;
 import com.omoke.store.dtos.UpdateUserRequest;
 import com.omoke.store.dtos.UserDto;
+import com.omoke.store.entities.Role;
 import com.omoke.store.mappers.UserMapper;
 import com.omoke.store.repositories.UserRepository;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -67,6 +68,7 @@ public class UserController {
 
         var user = userMapper.toUserEntity(request);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole(Role.USER);
         userRepository.save(user);
 
         var userDto = userMapper.toUserDto(user);
