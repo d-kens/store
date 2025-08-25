@@ -29,6 +29,6 @@ public class Jwt {
     }
 
     public String toString() {
-        return Jwts.builder().claims(claims).signWith(secretKey).toString() ;
+        return Jwts.builder().claims(claims).signWith(secretKey).compact() ;
     }
 }
