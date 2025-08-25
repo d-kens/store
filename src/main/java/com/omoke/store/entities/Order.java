@@ -38,7 +38,6 @@ public class Order {
 
 
     public static Order fromCart(Cart cart, User customer) {
-
         var order = new Order();
         order.setCustomer(customer);
         order.setStatus(OrderStatus.PENDING);
@@ -50,7 +49,10 @@ public class Order {
         });
 
         return order;
+    }
 
+    public boolean isPlacedBy(User customer) {
+        return this.customer.equals(customer);
     }
 
 }
