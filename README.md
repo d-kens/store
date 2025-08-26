@@ -1,9 +1,12 @@
 # Spring Boot E-commerce API
 
-- Managing products
-- Managing shopping carts
-- Checking out
-- Viewing order history
+Key Features: 
+1. Product management with database seeding via Flyway
+2. Shopping cart creation and item management
+3. User registration & login with JWT authentication
+4. Checkout flow integrated with Stripe Payments API
+5. Automatic order status updates via Stripe webhooks
+6. API documentation with Swagger UI for easy testing
 
 ---
 
