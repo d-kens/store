@@ -12,42 +12,17 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/mosh-hamedani/spring-api-finished.git
-cd spring-api-finished
+git clone https://github.com/d-kens/store
+cd store
 ```
 
 ### 2. Configure Environment Variables
 - Rename the ``.env.example`` file to ``.env``. 
 - Update the following environment variables inside .env: 
+1. JWT_SECRET
+2. STRIPE_SECRET_KEY
+3. STRIPE_WEBHOOK_SECRET_KEY
 
-#### JWT_SECRET
-
-Generate a secure random key using:
-
-```bash
-openssl rand -base64 32
-```
-
-If ``openssl`` is not available, go to [generate-random.org](https://generate-random.org), click on **Strings > API Tokens**, and generate a secure token.
-
-#### STRIPE_SECRET_KEY
-
-- Create a free account at [stripe.com](https://stripe.com)
-- On your dashboard, go to **Developers > API Keys**. You can use the search bar for quick access.
-- Copy the value of the **Secret Key**.
-
-#### STRIPE_WEBHOOK_SECRET_KEY
-
-- Install the Stripe CLI: https://docs.stripe.com/stripe-cli
-- Login and start the webhook listener:
-
-```bash
-stripe login
-stripe listen --forward-to http://localhost:8080/checkout/webhook
-```
-- Copy the **signing secret** from the terminal output and use it as the value for ``STRIPE_WEBHOOK_SECRET_KEY``.
-
----
 
 ## ▶️ Running the Project
 
@@ -57,19 +32,6 @@ This is a Maven project. To start the application, run:
 ./mvnw spring-boot:run
 ```
 
-If you're on Windows:
-
-```bash
-mvnw.cmd spring-boot:run
-```
-
-Once running, the application will be available at:
-
-```arduino
-http://localhost:8080
-```
-
----
 
 ## 📚 API Documentation
 
