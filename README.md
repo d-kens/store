@@ -1,12 +1,9 @@
 # Spring Boot E-commerce API
 
-Key Features: 
-1. Product management with database seeding via Flyway
-2. Shopping cart creation and item management
-3. User registration & login with JWT authentication
-4. Checkout flow integrated with Stripe Payments API
-5. Automatic order status updates via Stripe webhooks
-6. API documentation with Swagger UI for easy testing
+- Managing products
+- Managing shopping carts
+- Checking out
+- Viewing order history
 
 ---
 
@@ -153,6 +150,6 @@ Once payment is completed, Stripe will trigger a webhook call to:
 POST /checkout/webhook 
 ```
 
-Our backend listens for this event and updates the order status in the database accordingly.
+The backend listens for this event and updates the order status in the database accordingly.
 
 ---
