@@ -1,4 +1,4 @@
-package com.omoke.store.dtos;
+package com.omoke.store.payments;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
