@@ -1,7 +1,6 @@
 package com.omoke.store.services;
 
 import com.omoke.store.config.JwtConfig;
-import com.omoke.store.entities.Role;
 import com.omoke.store.entities.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

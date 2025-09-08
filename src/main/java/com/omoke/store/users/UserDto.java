@@ -1,4 +1,4 @@
-package com.omoke.store.dtos;
+package com.omoke.store.users;
 
 
 import lombok.AllArgsConstructor;

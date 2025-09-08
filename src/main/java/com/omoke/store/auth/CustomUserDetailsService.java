@@ -1,6 +1,6 @@
-package com.omoke.store.services;
+package com.omoke.store.auth;
 
-import com.omoke.store.repositories.UserRepository;
+import com.omoke.store.users.UsersRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,12 +12,12 @@ import java.util.Collections;
 
 @AllArgsConstructor
 @Service
-public class UserService implements UserDetailsService {
-    private final UserRepository userRepository;
+public class CustomUserDetailsService implements UserDetailsService {
+    private final UsersRepository usersRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        var user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        var user = usersRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         return new User(
                 user.getEmail(),

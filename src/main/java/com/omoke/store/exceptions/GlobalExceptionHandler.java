@@ -1,6 +1,7 @@
-package com.omoke.store.controllers;
+package com.omoke.store.exceptions;
 
 import com.omoke.store.dtos.ErrorDto;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -13,14 +14,14 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(HttpMessageNotReadableException.class) // The request body cannot be parsed into a java object
+    @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorDto> handleUnreadableMessage() {
         return ResponseEntity.badRequest().body(
             new ErrorDto("Invalid request body")
         );
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class) // The request body can be parsed to Java Object but foes not pass validation checks
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationErrors(
             MethodArgumentNotValidException exception
     ) {
@@ -32,5 +33,13 @@ public class GlobalExceptionHandler {
         });
 
         return ResponseEntity.badRequest().body(errors);
+    }
+
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<ErrorDto> handleNotFoundException(NotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                new ErrorDto(exception.getMessage())
+        );
     }
 }

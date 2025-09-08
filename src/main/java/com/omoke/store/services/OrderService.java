@@ -1,5 +1,6 @@
 package com.omoke.store.services;
 
+import com.omoke.store.auth.AuthService;
 import com.omoke.store.dtos.OrderDto;
 import com.omoke.store.exceptions.OrderNotFoundException;
 import com.omoke.store.mappers.OrderMapper;

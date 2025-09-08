@@ -1,12 +1,12 @@
 package com.omoke.store.payments;
 
+import com.omoke.store.auth.AuthService;
 import com.omoke.store.entities.Order;
 import com.omoke.store.exceptions.CartEmptyException;
 import com.omoke.store.exceptions.CartNotFoundException;
 import com.omoke.store.repositories.CartRepository;
 import com.omoke.store.repositories.OrderRepository;
 
-import com.omoke.store.services.AuthService;
 import com.omoke.store.services.CartService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
