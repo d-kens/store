@@ -2,8 +2,8 @@ package com.omoke.store.mappers;
 
 import com.omoke.store.dtos.RegisterUserRequest;
 import com.omoke.store.dtos.UpdateUserRequest;
-import com.omoke.store.users.UserDto;
-import com.omoke.store.entities.User;
+import com.omoke.store.users.dtos.UserDto;
+import com.omoke.store.users.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 

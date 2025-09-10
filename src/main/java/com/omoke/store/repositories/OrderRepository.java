@@ -1,7 +1,7 @@
 package com.omoke.store.repositories;
 
-import com.omoke.store.entities.Order;
-import com.omoke.store.entities.User;
+import com.omoke.store.order.Order;
+import com.omoke.store.users.User;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

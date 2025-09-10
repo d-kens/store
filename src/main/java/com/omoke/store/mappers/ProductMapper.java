@@ -1,7 +1,7 @@
 package com.omoke.store.mappers;
 
-import com.omoke.store.products.dtos.ProductDto;
-import com.omoke.store.products.Product;
+import com.omoke.store.product.dtos.ProductDto;
+import com.omoke.store.product.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

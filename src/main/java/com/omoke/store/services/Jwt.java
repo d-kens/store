@@ -1,6 +1,6 @@
 package com.omoke.store.services;
 
-import com.omoke.store.entities.Role;
+import com.omoke.store.users.enums.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 

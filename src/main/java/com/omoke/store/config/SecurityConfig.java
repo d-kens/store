@@ -1,6 +1,6 @@
 package com.omoke.store.config;
 
-import com.omoke.store.entities.Role;
+import com.omoke.store.users.enums.Role;
 import com.omoke.store.filters.JwtAuthenticationFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;

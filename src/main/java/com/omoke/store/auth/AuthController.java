@@ -3,8 +3,8 @@ package com.omoke.store.auth;
 import com.omoke.store.auth.dtos.AccessToken;
 import com.omoke.store.config.JwtConfig;
 import com.omoke.store.auth.dtos.LoginRequest;
-import com.omoke.store.users.UserDto;
-import com.omoke.store.users.UsersService;
+import com.omoke.store.users.dtos.UserDto;
+import com.omoke.store.users.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final JwtConfig jwtConfig;
     private final AuthService authService;
-    private final UsersService usersService;
+    private final UserService userService;
 
 
     @PostMapping("/login")
@@ -61,7 +61,7 @@ public class AuthController {
     public UserDto me() {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
         var userId = (Long) authentication.getPrincipal();
-        return usersService.findUserById(userId);
+        return userService.findUserById(userId);
     }
 
     @ExceptionHandler(BadCredentialsException.class)
