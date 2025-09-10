@@ -7,7 +7,7 @@ import com.omoke.store.exceptions.CartNotFoundException;
 import com.omoke.store.exceptions.ProductNotFoundException;
 import com.omoke.store.mappers.CartMapper;
 import com.omoke.store.repositories.CartRepository;
-import com.omoke.store.repositories.ProductRepository;
+import com.omoke.store.products.ProductsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ import java.util.UUID;
 public class CartService {
     private CartMapper cartMapper;
     private CartRepository cartRepository;
-    private ProductRepository productRepository;
+    private ProductsRepository productsRepository;
 
     public CartDto getCart(UUID cartId) {
         var cart = cartRepository.getCartWithItems(cartId).orElse(null);
@@ -44,7 +44,7 @@ public class CartService {
             throw new CartNotFoundException();
         }
 
-        var product = productRepository.findById(productId).orElse(null);
+        var product = productsRepository.findById(productId).orElse(null);
 
         if (product == null) {
             throw new ProductNotFoundException();

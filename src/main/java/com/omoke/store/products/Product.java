@@ -1,5 +1,6 @@
-package com.omoke.store.entities;
+package com.omoke.store.products;
 
+import com.omoke.store.entities.Category;
 import jakarta.persistence.*;
 import lombok.*;
 

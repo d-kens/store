@@ -1,4 +1,4 @@
-package com.omoke.store.dtos;
+package com.omoke.store.products.dtos;
 
 
 import lombok.Data;

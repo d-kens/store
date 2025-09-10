@@ -1,6 +1,7 @@
 package com.omoke.store.entities;
 
 
+import com.omoke.store.products.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

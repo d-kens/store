@@ -12,7 +12,7 @@ public interface UserMapper {
 
     UserDto toDto(User user);
 
-    User toUserEntity(RegisterUserRequest registerUserRequest);
+    User toEntity(RegisterUserRequest registerUserRequest);
 
     void update(UpdateUserRequest request, @MappingTarget User user);
 }
